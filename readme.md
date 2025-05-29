@@ -90,9 +90,9 @@ Isi file `.env` di root projek:
 
 ```
 DB_HOST=localhost
-DB_NAME=projeklogin
-DB_USER=root
-DB_PASS=
+DB_NAME=(Sesuaikan nama database Anda, misal: projeklogin)
+DB_USER=(sesuaikan username MySQL Anda, misal: root)
+DB_PASS=(sesuaikan password MySQL Anda, misal: kosongkan jika tidak ada)
 ```
 
 **(Jika password MySQL Anda berbeda, sesuaikan `DB_PASS`)**

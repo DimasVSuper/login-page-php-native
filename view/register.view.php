@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * @file register.view.php
+ *
+ * Tampilan untuk halaman registrasi pengguna.
+ * Menampilkan form untuk memasukkan username, email, dan password.
+ * Menggunakan Bootstrap untuk styling.
+ *
+ * @var string $csrf_token Token CSRF untuk melindungi form dari serangan CSRF.
+ */
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -66,6 +74,7 @@
                                 <h6 class="h5 mb-0">Create your account</h6>
                                 <p class="text-muted mt-2 mb-5">Fill in your username and password to register.</p>
                                 <form method="post" action="">
+                                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
                                     <div class="form-group">
                                         <label for="registerUsername">Username</label>
                                         <input type="text" class="form-control" id="registerUsername" name="register_username" required>

@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * @file main.view.php
+ *
+ * Tampilan halaman utama setelah pengguna berhasil login.
+ * Menampilkan pesan selamat datang dan tombol logout.
+ * Dilengkapi dengan script JavaScript untuk mendeteksi aktivitas pengguna
+ * dan melakukan logout otomatis jika tidak ada aktivitas selama periode waktu tertentu.
+ *
+ * @var string $username Nama pengguna yang sedang login.
+ */
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -30,4 +39,41 @@
         <p>Anda berhasil login sebagai <b><?= htmlspecialchars($username) ?></b>.</p>
     </div>
 </body>
+<script>
+/**
+ * @const AFK_LIMIT Batas waktu tidak aktif (AFK) dalam milidetik sebelum pengguna otomatis logout.
+ * Nilai default adalah 600000 (10 menit). Ubah menjadi 60000 untuk 1 menit (testing).
+ */
+const AFK_LIMIT = 600000; // 10 menit = 600000 ms (ganti 60000 untuk 1 menit)
+
+/**
+ * @var afkTimer Timer untuk menghitung waktu tidak aktif pengguna.
+ */
+let afkTimer;
+
+/**
+ * Fungsi untuk mereset timer AFK.
+ * Setiap kali ada aktivitas pengguna, timer akan direset.
+ */
+function resetAfkTimer() {
+    clearTimeout(afkTimer);
+    afkTimer = setTimeout(() => {
+        alert('Session telah habis, direct ke login');
+        window.location.href = '/projeklogin/logout';
+    }, AFK_LIMIT);
+}
+
+/**
+ * Menambahkan event listener ke dokumen untuk mendeteksi aktivitas pengguna.
+ * Setiap kali salah satu event ini terjadi, fungsi resetAfkTimer akan dipanggil.
+ */
+['mousemove', 'keydown', 'mousedown', 'touchstart'].forEach(evt => {
+    document.addEventListener(evt, resetAfkTimer, false);
+});
+
+/**
+ * Memulai timer AFK saat halaman dimuat.
+ */
+resetAfkTimer();
+</script>
 </html>

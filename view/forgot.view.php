@@ -1,4 +1,15 @@
 <?php
+/**
+ * @file forgot.view.php
+ *
+ * Tampilan untuk halaman lupa password.
+ * Menampilkan form untuk memasukkan username.
+ * Menggunakan Bootstrap untuk styling.
+ *
+ * @var string $csrf_token Token CSRF untuk melindungi form dari serangan CSRF.
+ * @var string $error Pesan error yang ditampilkan jika username tidak ditemukan.
+ * @var string $message Pesan sukses yang ditampilkan jika link reset password berhasil dikirim (dummy).
+ */
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -64,7 +75,14 @@
                                 </div>
                                 <h6 class="h5 mb-0">Reset your password</h6>
                                 <p class="text-muted mt-2 mb-5">Enter your username to receive a password reset link.</p>
+                                <?php if (isset($error)): ?>
+                                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                                <?php endif; ?>
+                                <?php if (isset($message)): ?>
+                                    <div class="alert alert-success"><?= htmlspecialchars($message) ?></div>
+                                <?php endif; ?>
                                 <form method="post" action="">
+                                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
                                     <div class="form-group">
                                         <label for="forgotUsername">Username</label>
                                         <input type="text" class="form-control" id="forgotUsername" name="forgot_username" required>

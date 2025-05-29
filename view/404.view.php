@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * @file 404.view.php
+ *
+ * Tampilan untuk halaman error 404 (Halaman Tidak Ditemukan).
+ * Menampilkan pesan error dan tombol untuk kembali ke halaman login.
+ * Menggunakan Bootstrap untuk styling.
+ */
 ?>
 
 <html lang="id">

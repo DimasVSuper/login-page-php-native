@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * @file login.view.php
+ *
+ * Tampilan untuk halaman login pengguna.
+ * Menampilkan form untuk memasukkan username dan password.
+ * Menggunakan Bootstrap untuk styling.
+ *
+ * @var string $csrf_token Token CSRF untuk melindungi form dari serangan CSRF.
+ * @var string $error Pesan error yang ditampilkan jika login gagal.
+ */
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -65,7 +74,11 @@
                                 </div>
                                 <h6 class="h5 mb-0">Welcome back!</h6>
                                 <p class="text-muted mt-2 mb-5">Enter your username and password to access admin panel.</p>
+                                <?php if (isset($error)): ?>
+                                    <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+                                <?php endif; ?>
                                 <form method="post" action="/projeklogin/login">
+                                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token) ?>">
                                     <div class="form-group">
                                         <label for="loginUsername">Username</label>
                                         <input type="text" class="form-control" id="loginUsername" name="login_username" required>
