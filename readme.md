@@ -3,6 +3,14 @@
 Aplikasi login, register, dan forgot password berbasis PHP, MySQL, dan Phroute, dengan session timeout, UUID, serta struktur MVC sederhana.  
 Cocok untuk belajar konsep login modern dan best practice PHP.
 
+[![PHP](https://img.shields.io/badge/PHP-8%2B-blue?logo=php)](https://www.php.net/releases/8.0/en.php)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-4.5-blueviolet?logo=bootstrap)](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-orange?logo=mysql)](https://www.mysql.com/)
+[![XAMPP](https://img.shields.io/badge/XAMPP-Server-orange?logo=apache)](https://www.apachefriends.org/)
+[![Phroute Routing](https://img.shields.io/badge/Phroute-Routing-lightgrey?logo=github)](https://github.com/mrjgreen/phroute)
+[![PHP Dotenv](https://img.shields.io/badge/PHP--Dotenv-Config-green?logo=github)](https://github.com/vlucas/phpdotenv)
+[![Password Hashing](https://img.shields.io/badge/PHP-Password--Hashing-yellow?logo=php)](https://www.php.net/manual/en/function.password-hash.php)
+
 ---
 
 ## Fitur
