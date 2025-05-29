@@ -1,0 +1,22 @@
+# Aktifkan mod_rewrite
+RewriteEngine On
+
+# Pastikan base path sesuai folder projek (jika di subfolder)
+RewriteBase /projeklogin/
+
+# Hilangkan .php di URL (opsional)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Blokir akses ke file sensitif
+<FilesMatch "\.(htaccess|env|git|ini|log|sh|bak)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Atur default index file
+DirectoryIndex index.php index.html
+
+# Nonaktifkan directory listing
+Options -Indexes
