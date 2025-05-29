@@ -27,35 +27,6 @@ Cocok untuk belajar konsep login modern dan best practice PHP.
 
 ---
 
-## Struktur Folder
-
-```
-projeklogin/
-│
-├── config/
-│   └── Database.php
-├── controller/
-│   └── AuthController.php
-├── core/
-│   ├── Router.php
-│   └── Web.php
-├── model/
-│   └── UserModel.php
-├── view/
-│   ├── 404.view.php
-│   ├── forgot.view.php
-│   ├── login.view.php
-│   ├── main.view.php
-│   └── register.view.php
-├── .env
-├── .htaccess
-├── composer.json
-├── composer.lock
-├── index.php
-└── vendor/
-```
-
----
 
 ## Instalasi
 
